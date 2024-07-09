@@ -9,15 +9,30 @@ class Room {
   addBooking = (booking) => {
     this._bookings.push(booking);
   };
+
+  isOccupied = (date) => {
+    return this._bookings.some((booking) => {
+      const checkin = new Date(booking._checkin);
+      const checkout = new Date(booking._checkout);
+      const targetDate = new Date(date);
+      return targetDate >= checkin && targetDate <= checkout;
+    });
+  };
 }
 
-const Booking = new Booking({
-  name: "Lorem ipsun",
-  email: "Loremipsun@gmail.com",
-  checkin: "2024-05-20",
-  checkout: "2024-05-23",
-  discount: 15,
-  room: RoomExample1,
-});
+class Booking {
+  constructor({ name, email, checkin, checkout, discount, room }) {
+    this._name = name;
+    this._email = email;
+    this._checkin = checkin;
+    this._checkout = checkout;
+    this._discount = discount;
+    this._room = room;
+  }
+}
+
+function suma(a, b) {
+  return a + b;
+}
 
 module.exports = { suma, Room, Booking };
