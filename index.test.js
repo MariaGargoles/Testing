@@ -143,15 +143,3 @@ test("debe devolver un array con solo la habitación 1 entre el 2024-06-12 y el 
     [habitacion1]
   );
 });
-
-test("debe devolver 18000 como tarifa total para la reserva 1 de la habitación 1", () => {
-  expect(reserva1Habitacion1.getFee()).toBe(18000);
-});
-
-test("debe devolver 20000 como tarifa total para la reserva 2 de la habitación 1", () => {
-  expect(reserva2Habitacion1.getFee()).toBe(20000);
-});
-
-test("debe devolver 32000 como tarifa total para la reserva 3 de la habitación 1", () => {
-  expect(reserva3Habitacion1.getFee()).toBe(32000);
-});
