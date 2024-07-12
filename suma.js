@@ -68,9 +68,10 @@ class Booking {
   }
 
   getFee = () => {
+    const miliseconds = 86400000;
     const start = Date.parse(this._checkin);
     const end = Date.parse(this._checkout);
-    const nights = (end - start) / 86400000;
+    const nights = (end - start) / miliseconds;
     const roomPrice =
       this._room._rate * nights -
       (this._room._rate * nights * this._room._discount) / 100;
