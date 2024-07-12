@@ -24,9 +24,10 @@ class Room {
   occupancyPercetage = (startDate, endDate) => {
     const start = Date.parse(startDate);
     const end = Date.parse(endDate);
+    const miliseconds = 86400000;
     let days = 0;
     let occupiedDays = 0;
-    for (let i = start; i <= end; i += 86400000) {
+    for (let i = start; i <= end; i += miliseconds) {
       days++;
       const date = new Date(i);
       let year = date.getFullYear();
